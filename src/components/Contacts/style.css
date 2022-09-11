@@ -61,7 +61,7 @@ ul,li{
     align-items: center;
     justify-content: flex-start;
     width: 50%;
-    margin-left: 5vh;
+    margin-left: 13%;
 }
 
 .li-phonenumber{
@@ -69,7 +69,7 @@ ul,li{
     align-items: center;
     justify-content: flex-end;
     width: 50%;
-    margin-right: 5vh;
+    margin-right: 13%;
 }
 
 .titles{

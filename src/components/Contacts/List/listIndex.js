@@ -3,6 +3,8 @@ function List({contacts, removeItem}){
 
     const [filterText, setFilterText] = useState("");
     
+    //Uncaught TypeError: Cannot read properties of null (reading 'filter') : If you are getting this error, you should remove the initial values from Contacts and run. :)
+    
     const filtered = contacts.filter((item) =>
     {
         return Object.keys(item).some((key) =>
@@ -12,7 +14,6 @@ function List({contacts, removeItem}){
             .includes(filterText.toLocaleLowerCase())
         );
     });
-
     // console.log("Filtered: ", filtered);
 
     return(
@@ -28,23 +29,17 @@ function List({contacts, removeItem}){
         </table>
                 <ul className='list'>
                     {
-                        filtered.map((contact, i) => (
-                            
+                        filtered.map((contact, i) => (                            
                             <li className='list-item' key={i}>
                                 <span className='li-fullname'>{contact.fullname}</span>
                                 <span className='li-phonenumber'>{contact.phone_number}</span>
                                 <button type="button" className="destroy btn btn-danger" onClick={() => removeItem(i)}>&#10005;</button>                              
-                            </li>
-                           
+                            </li>             
                         ))
                     }
-                </ul>
-     
-       
+                </ul>      
             <p className='totalcontacts'>Total Contacts : ({filtered.length})</p>
         </div>
     );
 }
-
-
 export default List;
